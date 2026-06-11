@@ -2,13 +2,12 @@
 name = "kobold-simd"
 version = "0.1.0"
 edition = "2021"
-description = "SIMD-accelerated packed-decimal and zoned-decimal decode and batch record scanning (AVX2/AVX-512/NEON). // SIMD intrinsics: unsafe permitted in this crate, audited per-function."
+description = "Batched, branch-light decoders for COMP-3 packed-decimal and zoned-decimal DISPLAY COBOL fields, shaped for SIMD/auto-vectorization, with a scalar cross-check correctness contract."
 authors = ["infinityabundance"]
 license = "Apache-2.0"
 repository = "https://github.com/infinityabundance/kobold-simd"
 readme = "README.md"
-publish = false  # empty scaffold; flip to publishable once the implementation lands
 
 [dependencies]
-# Dependency rule: kobold-* MAY depend on gnucobol-rs; gnucobol-rs MUST NOT depend on kobold-*.
-# Activate when the implementation is extracted, e.g.: gnucobol-rs = "0.7"
+# Standalone: no runtime dependencies. (Dependency rule, if any is ever added: kobold-* MAY depend
+# on gnucobol-rs; gnucobol-rs MUST NOT depend on kobold-*.)
